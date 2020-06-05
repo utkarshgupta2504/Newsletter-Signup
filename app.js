@@ -56,7 +56,9 @@ app.post("/", (req, res) => {
 			response.on('data', data => {
 				console.log(JSON.parse(data));
 
-				if(data.error_count === 0) {
+				jData = JSON.parse(data);
+
+				if(jData.error_count == 0) {
 
 					res.sendFile(__dirname + '/success.html');
 				}
